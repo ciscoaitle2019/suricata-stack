@@ -1,6 +1,6 @@
 Sample Command for Reference
 
 Rolling up with specify interface:
--  docker run -d --name suricata -e 'INTERFACE=eno1' kelvinyasu/ud-suricata
+-  docker run -d --net=host --name suricata -e 'INTERFACE=eno1' --restart always kelvinyasu/ud-suricata
 
 
