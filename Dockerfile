@@ -20,7 +20,9 @@ RUN apt-get -qq install \
 
 RUN add-apt-repository ppa:oisf/suricata-stable -y \
 	&& apt-get update -y \
-	&& apt-get install suricata -y
+	&& apt-get install suricata python-pip -y
+
+RUN pip install --upgrade suricata-update
 
 RUN echo ${INTERFACE} > /root/interface
 
