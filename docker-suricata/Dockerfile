@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ENV INTERFACE eth0
 
@@ -22,7 +22,7 @@ RUN add-apt-repository ppa:oisf/suricata-stable -y \
 	&& apt-get update -y \
 	&& apt-get install suricata python-pip -y
 
-RUN pip install --upgrade suricata-update
+RUN pip install --upgrade suricata-update && suricata-update
 
 RUN echo ${INTERFACE} > /root/interface
 

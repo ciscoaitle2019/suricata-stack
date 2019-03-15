@@ -1,0 +1,6 @@
+Sample Command for Reference
+
+Rolling up with specify interface:
+-  docker run -d --net=host -v /var/log/suricata:/var/log/suricata --name suricata -e 'INTERFACE=eno1' --restart always ciscoaitle2019/suricata
+
+ethtool -K {{INTERFACE}} sg off gro off lro off tso off gso off
